@@ -4,12 +4,9 @@
 namespace shepherd {
 
 	class Shepherd{
-		public: 	
-			 
+		public: 				 
 			Shepherd();
 			~Shepherd();
-
 	};
-
 }
 #endif //SHEPHERD_INCLUDE_SHEPHERD_H_
