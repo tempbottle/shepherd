@@ -1,65 +1,72 @@
-#executable 
-SHEPHERD=shepherd
+#
+# 'make depend' uses makedepend to automatically generate dependencies 
+#               (dependencies are added to end of Makefile)
+# 'make'        build executable file 'mycc'
+# 'make clean'  removes all .o and executable files
+#
 
-#home dir
-SHEPHERD_DIR=.
+# define the C compiler to use
+CC = g++
 
-#headers 
-SHEPHERD_HEADERS=$(SHEPHERD_DIR)/include/shepherd/*.h
+# define any compile-time flags
+CFLAGS = -Wall -g -pthread -std=c++11  
 
-#sources
-#KD_SRC = $(KD_DIR)/src/*.cc $(KD_DIR)/src/*.h $(KD_HEADERS)
+# define any directories containing header files other than /usr/include
+#
+INCLUDES = -I./include
 
-SHEPHERD_SRC = $(SHEPHERD_DIR)/src/*.cc 
-#$(SHEPHERD_HEADERS)
+# define library paths in addition to /usr/lib
+#   if I wanted to include libraries not in /usr/lib I'd specify
+#   their path using -Lpath, something like:
+LFLAGS =  
+
+# define any libraries to link into executable:
+#   if I want to link in libraries (libx.so or libx.a) I use the -llibname 
+#   option, something like (this will link in libmylib.so and libm.so:
+LIBS =  
+
+# define the C source files
+SRCS = src/shepherd.cc src/shepherd-main.cc
+
+# define the C object files 
+#
+# This uses Suffix Replacement within a macro:
+#   $(name:string1=string2)
+#         For each word in 'name' replace 'string1' with 'string2'
+# Below we are replacing the suffix .c of all words in the macro SRCS
+# with the .o suffix
+#
+OBJS = $(SRCS:.cc=.o)
+
+# define the executable file 
+MAIN = shepherd
+
+#
+# The following part of the makefile is generic; it can be used to 
+# build any executable just by changing the definitions above and by
+# deleting dependencies appended to the file from 'make depend'
+#
+
+.PHONY: depend clean
+
+all:    $(MAIN)
+	@echo  Simple compiler named mycc has been compiled
+
+$(MAIN): $(OBJS) 
+	$(CC) $(CFLAGS) $(INCLUDES) -o $(MAIN) $(OBJS) $(LFLAGS) $(LIBS)
+
+# this is a suffix replacement rule for building .o's from .c's
+# it uses automatic variables $<: the name of the prerequisite of
+# the rule(a .c file) and $@: the name of the target of the rule (a .o file) 
+# (see the gnu make manual section about automatic variables)
+.cc.o:
+	$(CC) $(CFLAGS) $(INCLUDES) -c $<  -o $@
+
+clean:
+	$(RM) *.o *~ $(MAIN)
+
+depend: $(SRCS)
+	makedepend $(INCLUDES) $^
 
 
-OBJECTS=$(SHEPHERD_SRC:.cc=.o)
-
-
-#compiler
-CC=clang++
-
-#compiler flags
-CC_FLAGS= -Wall -pthread -std=c++11
-
-
-all:shepherd
-
-shepherd: shepherd.o shepherd-main.o
-	$(CC) shepherd-main.o shepherd.o  -o shepherd
-
-shepherd.o: $(SHEPHERD_DIR)/src/shepherd.cc $(SHEPHERD_HEADERS) 
-	$(CC) $(CC_FLAGS) -c $(SHEPHERD_DIR)/src/shepherd.cc 
-
-shepherd-main.o: $(SHEPHERD_DIR)/src/shepherd-main.cc $(SHEPHERD_HEADERS)
-	$(CC) $(CC_FLAGS) -c $(SHEPHERD_DIR)/src/shepherd-main.cc 
-
-
-
-clean: 
-	rm -rf $(SHEPHERD) *.a *.o
-
-
-
-#all:$(SHEPHERD_SRC) $(SHEPHERD)
-
-#$(SHEPHERD):$(OBJECTS) 
-#	$(CC) $(OBJECTS) -o $@
-
-#.cc.o:
-#	$(CC) $(CC_FLAGS) $< -o $@
-
-
-#shepherd.o: $(SHEPHERD_SRC) 
-#		$(CC) $(CC_FLAGS) -I$(SHEPHERD_DIR) -c \
-#		$(SHEPHERD_DIR)/src/shepherd.cc
-
-#shepherd-main.o:  $(SHEPHERD_SRC) 
-#		$(CC) $(CC_FLAGS) $(SHEPHERD_DIR)/src/shepherd-main.cc
-
-#$(KD):shepherd.o shepherd-main.o 
-#	$(CC) $(CC_FLAGS) -o $(SHEPHERD)
-
-#clean: 
-#	rm -rf $(SHEPHERD) *.a *.o
+# DO NOT DELETE THIS LINE -- make depend needs it
