@@ -1,7 +1,7 @@
 #
 # 'make depend' uses makedepend to automatically generate dependencies 
 #               (dependencies are added to end of Makefile)
-# 'make'        build executable file 'mycc'
+# 'make'        build executable file
 # 'make clean'  removes all .o and executable files
 #
 
@@ -9,7 +9,7 @@
 CC = clang++
 
 # define any compile-time flags
-CFLAGS = -Wall -g -pthread -std=c++11  
+CC_FLAGS = -Wall -g -pthread -std=c++11  
 
 # define any directories containing header files other than /usr/include
 #
@@ -25,18 +25,24 @@ LFLAGS =
 #   option, something like (this will link in libmylib.so and libm.so:
 LIBS =  
 
+# source extension
+SRC_EXT = cc
+
+# source directory
+SRC_DIR = src
+
 # define the C source files
-SRCS = src/shepherd.cc src/shepherd-main.cc
+SRC_FILES = $(SRC_DIR)/shepherd.cc $(SRC_DIR)/shepherd-main.cc
 
 # define the C object files 
 #
 # This uses Suffix Replacement within a macro:
 #   $(name:string1=string2)
 #         For each word in 'name' replace 'string1' with 'string2'
-# Below we are replacing the suffix .c of all words in the macro SRCS
+# Below we are replacing the suffix .cc of all words in the macro SRCS
 # with the .o suffix
 #
-OBJS = $(SRCS:.cc=.o)
+OBJS = $(SRC_FILES:.$(SRC_EXT)=.o)
 
 # define the executable file 
 MAIN = shepherd
@@ -50,22 +56,22 @@ MAIN = shepherd
 .PHONY: depend clean
 
 all:    $(MAIN)
-	@echo  Simple compiler named mycc has been compiled
+	@echo  $(MAIN) has been compiled.
 
 $(MAIN): $(OBJS) 
-	$(CC) $(CFLAGS) $(INCLUDES) -o $(MAIN) $(OBJS) $(LFLAGS) $(LIBS)
+	$(CC) $(CC_FLAGS) $(INCLUDES) -o $(MAIN) $(OBJS) $(LFLAGS) $(LIBS)
 
-# this is a suffix replacement rule for building .o's from .c's
+# this is a suffix replacement rule for building .o's from .cc's
 # it uses automatic variables $<: the name of the prerequisite of
 # the rule(a .c file) and $@: the name of the target of the rule (a .o file) 
 # (see the gnu make manual section about automatic variables)
 .cc.o:
-	$(CC) $(CFLAGS) $(INCLUDES) -c $<  -o $@
+	$(CC) $(CC_FLAGS) $(INCLUDES) -c $<  -o $@
 
 clean:
 	$(RM) *.o *~ $(MAIN)
 
-depend: $(SRCS)
+depend: $(SRC_FILES)
 	makedepend $(INCLUDES) $^
 
 
