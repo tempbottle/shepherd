@@ -32,7 +32,10 @@ SRC_EXT = cc
 SRC_DIR = src
 
 # define the C source files
-SRC_FILES = $(SRC_DIR)/shepherd.cc $(SRC_DIR)/shepherd-main.cc
+SRC_FILES = $(SRC_DIR)/shepherd.cc \
+			$(SRC_DIR)/shepherd-main.cc \
+			$(SRC_DIR)/server/server.cc
+
 
 # define the C object files 
 #

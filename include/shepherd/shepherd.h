@@ -2,7 +2,6 @@
 #define SHEPHERD_INCLUDE_SHEPHERD_H_
 
 namespace shepherd {
-
 	class Shepherd{
 		public: 				 
 			Shepherd();
