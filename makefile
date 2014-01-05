@@ -9,7 +9,7 @@
 CC = clang++
 
 # define any compile-time flags
-CC_FLAGS = -Wall -g -pthread -std=c++11  
+CC_FLAGS = -Wall -pthread -std=c++11  
 
 # define any directories containing header files other than /usr/include
 #
@@ -69,7 +69,7 @@ $(MAIN): $(OBJS)
 	$(CC) $(CC_FLAGS) $(INCLUDES) -c $<  -o $@
 
 clean:
-	$(RM) *.o *~ $(MAIN)
+	$(RM) $(SRC_DIR)/*.o *~ $(MAIN)
 
 depend: $(SRC_FILES)
 	makedepend $(INCLUDES) $^
