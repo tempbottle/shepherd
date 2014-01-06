@@ -1,5 +1,5 @@
-#ifndef SHEPHERD_SERVER_H_
-#define SHEPHERD_SERVER_H_
+#ifndef SHEPHERD_SERVER_SERVER_H_
+#define SHEPHERD_SERVER_SERVER_H_
 
 namespace shepherd {
 	namespace server{
@@ -12,4 +12,4 @@ namespace shepherd {
 		};
 	}
 }
-#endif //SHEPHERD_SERVER_H_
+#endif //SHEPHERD_SERVER_SERVER_H_
