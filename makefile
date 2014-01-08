@@ -33,9 +33,11 @@ SRC_DIR = src
 
 # define the C source files
 SRC_FILES = $(SRC_DIR)/shepherd.cc \
-			$(SRC_DIR)/shepherd-main.cc \
+			$(SRC_DIR)/main.cc \
 			$(SRC_DIR)/server/server.cc \
-			$(SRC_DIR)/server/config.cc
+			$(SRC_DIR)/server/config.cc \
+			
+		
 
 
 # define the C object files 
@@ -73,7 +75,7 @@ $(MAIN): $(OBJS)
 	$(CC) $(CC_FLAGS) $(INCLUDES) -c $<  -o $@
 
 clean:
-	$(RM) $(SRC_DIR)/*.o *~ $(MAIN)
+	$(RM) $(SRC_DIR)/*.o $(SRC_DIR)/server/*.o *~ $(MAIN)
 
 depend: $(SRC_FILES)
 	makedepend $(INCLUDES) $^
