@@ -7,6 +7,7 @@
 using namespace shepherd;
 
 int main(int argc, const char *argv[]){
+    
 	try{
 
 		server::Config *config = new server::Config;
@@ -19,7 +20,7 @@ int main(int argc, const char *argv[]){
 		delete server;
 		
 	}catch(std::exception& e){
-		std::cout<< e.what()<< std::endl;
+		std::cout<< e.what()<< '\n';
 	}
 	return 0;
 }
