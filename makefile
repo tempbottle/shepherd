@@ -39,6 +39,11 @@ SRC_FILES = $(SRC_DIR)/shepherd.cc \
             $(SRC_DIR)/server/database.cc \
             $(SRC_DIR)/common/io_util.cc \
             $(SRC_DIR)/common/path_util.cc \
+			$(SRC_DIR)/common/atomic_file_output_stream.cc \
+			$(SRC_DIR)/common/path_trie.cc \
+			$(SRC_DIR)/common/string_util.cc \
+				
+			
 
 			
 		
