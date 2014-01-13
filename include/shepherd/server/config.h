@@ -1,5 +1,5 @@
-#ifndef SHEPHERD_SERVER_CONFIG_H_
-#define SHEPHERD_SERVER_CONFIG_H_
+#ifndef SHEPHERD_INCLUDE_SERVER_CONFIG_H_
+#define SHEPHERD_INCLUDE_SERVER_CONFIG_H_
 
 #include <string>
 #include <unordered_map>
@@ -20,4 +20,4 @@ namespace shepherd {
 		};
 	}
 }
-#endif //SHEPHERD_SERVER_CONFIG_H_
+#endif //SHEPHERD_INCLUDE_SERVER_CONFIG_H_

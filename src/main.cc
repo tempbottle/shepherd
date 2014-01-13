@@ -1,7 +1,8 @@
 #include <iostream>
 #include <memory>
-#include "server/server.h"
-#include "server/config.h"
+
+#include "shepherd/server/server.h"
+#include "shepherd/server/config.h"
 #include "shepherd/shepherd.h"
 
 using namespace shepherd;

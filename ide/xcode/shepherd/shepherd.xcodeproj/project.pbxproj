@@ -12,6 +12,7 @@
 		89139E4A18835907002DFF1F /* server.cc in Sources */ = {isa = PBXBuildFile; fileRef = 89139E4518835907002DFF1F /* server.cc */; };
 		89139E4B18835907002DFF1F /* shepherd.cc in Sources */ = {isa = PBXBuildFile; fileRef = 89139E4718835907002DFF1F /* shepherd.cc */; };
 		89139E5018835BE8002DFF1F /* ioutil.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 89139E4E18835BE8002DFF1F /* ioutil.cpp */; };
+		89139E5618836532002DFF1F /* database.cc in Sources */ = {isa = PBXBuildFile; fileRef = 89139E5418836532002DFF1F /* database.cc */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -31,12 +32,14 @@
 		89139E3F188358ED002DFF1F /* shepherd.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = shepherd.h; sourceTree = "<group>"; };
 		89139E4118835907002DFF1F /* main.cc */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = main.cc; sourceTree = "<group>"; };
 		89139E4318835907002DFF1F /* config.cc */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = config.cc; sourceTree = "<group>"; };
-		89139E4418835907002DFF1F /* config.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = config.h; sourceTree = "<group>"; };
 		89139E4518835907002DFF1F /* server.cc */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = server.cc; sourceTree = "<group>"; };
-		89139E4618835907002DFF1F /* server.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = server.h; sourceTree = "<group>"; };
 		89139E4718835907002DFF1F /* shepherd.cc */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = shepherd.cc; sourceTree = "<group>"; };
 		89139E4C188359F1002DFF1F /* ioutil.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ioutil.h; sourceTree = "<group>"; };
 		89139E4E18835BE8002DFF1F /* ioutil.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = ioutil.cpp; path = common/ioutil.cpp; sourceTree = "<group>"; };
+		89139E5118836425002DFF1F /* config.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = config.h; sourceTree = "<group>"; };
+		89139E5218836425002DFF1F /* server.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = server.h; sourceTree = "<group>"; };
+		89139E53188364CA002DFF1F /* database.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = database.h; sourceTree = "<group>"; };
+		89139E5418836532002DFF1F /* database.cc */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = database.cc; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -97,6 +100,9 @@
 		89139E3E188358ED002DFF1F /* server */ = {
 			isa = PBXGroup;
 			children = (
+				89139E5118836425002DFF1F /* config.h */,
+				89139E5218836425002DFF1F /* server.h */,
+				89139E53188364CA002DFF1F /* database.h */,
 			);
 			path = server;
 			sourceTree = "<group>";
@@ -117,9 +123,8 @@
 			isa = PBXGroup;
 			children = (
 				89139E4318835907002DFF1F /* config.cc */,
-				89139E4418835907002DFF1F /* config.h */,
 				89139E4518835907002DFF1F /* server.cc */,
-				89139E4618835907002DFF1F /* server.h */,
+				89139E5418836532002DFF1F /* database.cc */,
 			);
 			path = server;
 			sourceTree = "<group>";
@@ -185,6 +190,7 @@
 			files = (
 				89139E4818835907002DFF1F /* main.cc in Sources */,
 				89139E4A18835907002DFF1F /* server.cc in Sources */,
+				89139E5618836532002DFF1F /* database.cc in Sources */,
 				89139E5018835BE8002DFF1F /* ioutil.cpp in Sources */,
 				89139E4B18835907002DFF1F /* shepherd.cc in Sources */,
 				89139E4918835907002DFF1F /* config.cc in Sources */,
@@ -305,6 +311,7 @@
 				89139E3818835889002DFF1F /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

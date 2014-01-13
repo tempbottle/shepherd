@@ -1,5 +1,5 @@
 #include <iostream>
-#include "config.h"
+#include "shepherd/server/config.h"
 
 using namespace shepherd;
 
