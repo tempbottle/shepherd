@@ -37,7 +37,8 @@ SRC_FILES = $(SRC_DIR)/shepherd.cc \
 			$(SRC_DIR)/server/server.cc \
 			$(SRC_DIR)/server/config.cc \
             $(SRC_DIR)/server/database.cc \
-            $(SRC_DIR)/common/ioutil.cc \
+            $(SRC_DIR)/common/io_util.cc \
+            $(SRC_DIR)/common/path_util.cc \
 
 			
 		
