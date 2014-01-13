@@ -3,17 +3,16 @@
 
 #include <string>
 #include "shepherd/watcher.h"
-#include "shepherd/watched_event.h"
 
 namespace shepherd {
 	class WatchedEvent{
 		public:
-			WatchedEvent(Watcher::State state, Watcher::EventType eventType, std::string path);
+			WatchedEvent(const Watcher::State &state, const Watcher::EventType &eventType, const std::string &path);
 			~WatchedEvent();
 		private:
 			std::string path;
-			State state;
-	    	EventType eventType;
+			Watcher::State state;
+	    	Watcher::EventType eventType;
 	};
 }
 #endif //SHEPHERD_INCLUDE_EVENT_H_

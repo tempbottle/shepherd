@@ -1,7 +1,6 @@
 #ifndef SHEPHERD_INCLUDE_WATCHER_H_
 #define SHEPHERD_INCLUDE_WATCHER_H_
 
-#include "shepherd/watched_event.h"
 
 namespace shepherd {
 	class Watcher{
@@ -27,7 +26,7 @@ namespace shepherd {
 	            NodeDataChanged =3,
 	            NodeChildrenChanged = 4
 			};
-			virtual void Process(WatchedEvent event) = 0;
+			virtual void Process(const class WatchedEvent &event) = 0;
 	};
 }
 #endif // SHEPHERD_INCLUDE_WATCHER_H_
