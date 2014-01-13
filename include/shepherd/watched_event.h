@@ -7,7 +7,9 @@
 namespace shepherd {
 	class WatchedEvent{
 		public:
-			WatchedEvent(const Watcher::State &state, const Watcher::EventType &eventType, const std::string &path);
+			WatchedEvent(const Watcher::State &state,
+                         const Watcher::EventType &eventType,
+                         const std::string &path);
 			~WatchedEvent();
 		private:
 			std::string path;

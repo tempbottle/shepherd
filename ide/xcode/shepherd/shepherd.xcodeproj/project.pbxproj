@@ -15,6 +15,8 @@
 		89139E58188367DF002DFF1F /* makefile in Sources */ = {isa = PBXBuildFile; fileRef = 89139E57188367DF002DFF1F /* makefile */; };
 		89139E6318836E08002DFF1F /* path_util.cc in Sources */ = {isa = PBXBuildFile; fileRef = 89139E6218836E08002DFF1F /* path_util.cc */; };
 		89139E65188376DC002DFF1F /* io_util.cc in Sources */ = {isa = PBXBuildFile; fileRef = 89139E64188376DC002DFF1F /* io_util.cc */; };
+		89139E711883B592002DFF1F /* quotas.cc in Sources */ = {isa = PBXBuildFile; fileRef = 89139E6F1883B592002DFF1F /* quotas.cc */; };
+		89139E721883B592002DFF1F /* watched_event.cc in Sources */ = {isa = PBXBuildFile; fileRef = 89139E701883B592002DFF1F /* watched_event.cc */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -45,6 +47,10 @@
 		89139E6218836E08002DFF1F /* path_util.cc */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = path_util.cc; path = common/path_util.cc; sourceTree = "<group>"; };
 		89139E64188376DC002DFF1F /* io_util.cc */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = io_util.cc; path = common/io_util.cc; sourceTree = "<group>"; };
 		89139E6618837700002DFF1F /* io_util.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = io_util.h; sourceTree = "<group>"; };
+		89139E6D1883B56F002DFF1F /* watched_event.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = watched_event.h; sourceTree = "<group>"; };
+		89139E6E1883B56F002DFF1F /* watcher.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = watcher.h; sourceTree = "<group>"; };
+		89139E6F1883B592002DFF1F /* quotas.cc */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = quotas.cc; sourceTree = "<group>"; };
+		89139E701883B592002DFF1F /* watched_event.cc */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = watched_event.cc; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -88,6 +94,8 @@
 		89139E3C188358ED002DFF1F /* shepherd */ = {
 			isa = PBXGroup;
 			children = (
+				89139E6D1883B56F002DFF1F /* watched_event.h */,
+				89139E6E1883B56F002DFF1F /* watcher.h */,
 				89139E3D188358ED002DFF1F /* common */,
 				89139E3E188358ED002DFF1F /* server */,
 				89139E3F188358ED002DFF1F /* shepherd.h */,
@@ -117,6 +125,8 @@
 		89139E4018835907002DFF1F /* src */ = {
 			isa = PBXGroup;
 			children = (
+				89139E6F1883B592002DFF1F /* quotas.cc */,
+				89139E701883B592002DFF1F /* watched_event.cc */,
 				89139E4D18835B9A002DFF1F /* common */,
 				89139E4118835907002DFF1F /* main.cc */,
 				89139E4218835907002DFF1F /* server */,
@@ -201,6 +211,8 @@
 				89139E58188367DF002DFF1F /* makefile in Sources */,
 				89139E6318836E08002DFF1F /* path_util.cc in Sources */,
 				89139E4A18835907002DFF1F /* server.cc in Sources */,
+				89139E721883B592002DFF1F /* watched_event.cc in Sources */,
+				89139E711883B592002DFF1F /* quotas.cc in Sources */,
 				89139E5618836532002DFF1F /* database.cc in Sources */,
 				89139E4B18835907002DFF1F /* shepherd.cc in Sources */,
 				89139E4918835907002DFF1F /* config.cc in Sources */,
