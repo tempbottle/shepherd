@@ -36,6 +36,9 @@ SRC_FILES = $(SRC_DIR)/shepherd.cc \
 			$(SRC_DIR)/main.cc \
 			$(SRC_DIR)/server/server.cc \
 			$(SRC_DIR)/server/config.cc \
+            $(SRC_DIR)/server/database.cc \
+            $(SRC_DIR)/common/ioutil.cc \
+
 			
 		
 
@@ -75,7 +78,10 @@ $(MAIN): $(OBJS)
 	$(CC) $(CC_FLAGS) $(INCLUDES) -c $<  -o $@
 
 clean:
-	$(RM) $(SRC_DIR)/*.o $(SRC_DIR)/server/*.o *~ $(MAIN)
+	$(RM) $(SRC_DIR)/*.o \
+    $(SRC_DIR)/server/*.o \
+    $(SRC_DIR)/common/*.o \
+    *~ $(MAIN)
 
 depend: $(SRC_FILES)
 	makedepend $(INCLUDES) $^
