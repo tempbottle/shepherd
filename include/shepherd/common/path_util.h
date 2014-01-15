@@ -8,8 +8,8 @@ namespace shepherd {
     namespace common{
         class PathUtil {
         public:
-            static void ValidatePath(std::string path);
-            static void ValidatePath(std::string path, bool isSequential);
+            static void ValidatePath(const std::string &path);
+            static void ValidatePath(const std::string &path, bool isSequential);
         };
     }
 }
