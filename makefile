@@ -44,12 +44,28 @@ SRC_FILES = $(SRC_DIR)/shepherd.cc \
 			$(SRC_DIR)/common/string_util.cc \
 			$(SRC_DIR)/quotas.cc \
 			$(SRC_DIR)/watched_event.cc \
-				
+			$(SRC_DIR)/acl/acl_parser.cc \
+			$(SRC_DIR)/commands/add_auth_cmd.cc \
+			$(SRC_DIR)/commands/delete_cmd.cc \
+			$(SRC_DIR)/commands/get_cmd.cc \
+			$(SRC_DIR)/commands/stat_printer_cmd.cc \
+			$(SRC_DIR)/commands/client_cmd.cc \
+			$(SRC_DIR)/commands/delete_quota_cmd.cc \
+			$(SRC_DIR)/commands/list_quota_cmd.cc \
+			$(SRC_DIR)/commands/set_cmd.cc \
+			$(SRC_DIR)/commands/sync_cmd.cc \
+			$(SRC_DIR)/commands/close_cmd.cc \
+			$(SRC_DIR)/commands/get_acl_cmd.cc \
+			$(SRC_DIR)/commands/ls_cmd.cc \
+			$(SRC_DIR)/commands/set_quota_cmd.cc \
+			$(SRC_DIR)/commands/create_cmd.cc \
+			$(SRC_DIR)/commands/get_cfg_cmd.cc \
+			$(SRC_DIR)/commands/recfg_cmd.cc \
+			$(SRC_DIR)/commands/stat_cmd.cc \
+	
 			
 
 			
-		
-
 
 # define the C object files 
 #
@@ -89,6 +105,9 @@ clean:
 	$(RM) $(SRC_DIR)/*.o \
     $(SRC_DIR)/server/*.o \
     $(SRC_DIR)/common/*.o \
+	$(SRC_DIR)/acl/*.o \
+	$(SRC_DIR)/commands/*.o \
+	$(SRC_DIR)/communication/*.o \
     *~ $(MAIN)
 
 depend: $(SRC_FILES)
