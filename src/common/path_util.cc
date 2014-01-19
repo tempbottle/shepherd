@@ -4,11 +4,11 @@
 
 using namespace shepherd;
 
-void common::PathUtil::ValidatePath(std::string path){
+void common::PathUtil::ValidatePath(const std::string &path){
     
     
 }
-void common::PathUtil::ValidatePath(std::string path, bool isSequential){
+void common::PathUtil::ValidatePath(const std::string &path, bool isSequential){
     
     
 }
